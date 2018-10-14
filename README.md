@@ -3,7 +3,7 @@
 ## 使うライブラリ
 
 - [mocha](https://mochajs.org/)
-- [power-asswer](https://github.com/power-assert-js/power-assert)
+- [power-assert](https://github.com/power-assert-js/power-assert)
 
 ## まず見るところ
 
@@ -17,7 +17,7 @@
 - libsディレクトリ
   - 実際に実装ファイルを格納している
   - libsディレクトリ内のファイルのテストはtest/libsディレクトリ内に作る
-- testディレクトリ
+- testディレクトリｖ
   - mocha.optsファイルはmochaの設定ファイル。詳しくは[ドキュメント](https://mochajs.org/#mochaopts)を参照
   - test/libsディレクトリ配下にlibsの中と同じファイル名でテストファイルを作成している。
     - しかし、`〇〇.spec.js`のようにファイル名と拡張子の間に `spec` という名前を入れている。(`spec` を入れることですぐにこのファイルがテストファイルだと判断できる)
