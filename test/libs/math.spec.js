@@ -48,3 +48,31 @@ describe('mathオブジェクトに実装されているメソッドのテスト
 
   // 割り算のdiv関数のテストを作成
 });
+
+describe('mathオブジェクトに実装されているメソッドのテスト', () => {
+  describe('subメソッドのテスト', () => {
+    it('subメソッドの型はfunctionである', () => {
+      assert.equal(typeof math.sub, 'function');
+    });
+
+    it('正しく引き算ができる', () => {
+      assert.equal(math.sub(2, 1), 1);
+      assert.equal(math.sub(-99, -99), 0);
+      assert.equal(math.sub(100000, -1), 100001);
+      assert.equal(math.sub(0, 1), -1);
+    });
+
+    it('数値以外がセットされたらエラーを返す', () => {
+      const invalidValist = ['a', {}, [], null, undefined];
+      invalidValist.forEach(invalidValist => {
+        let error = null;
+        try {
+          math.sub('a', 2);
+        } catch (err) {
+          error = err;
+        }
+          assert.equal(error.message, '数値以外のものが引数に含められています');
+        });
+      });
+    });
+  });
