@@ -44,7 +44,7 @@ describe('mathオブジェクトに実装されているメソッドのテスト
 
 });
 
-  // 引き算のsub関数のテストを作成
+// 引き算のsub関数のテストを作成
 
 describe('mathオブジェクトに実装されているメソッドのテスト', () => {
   describe('subメソッドのテスト', () => {
@@ -68,40 +68,68 @@ describe('mathオブジェクトに実装されているメソッドのテスト
         } catch (err) {
           error = err;
         }
-          assert.equal(error.message, '数値以外のものが引数に含められています');
-        });
+        assert.equal(error.message, '数値以外のものが引数に含められています');
       });
     });
   });
+});
 
-  // 掛け算のmul関数のテストを作成
+// 掛け算のmul関数のテストを作成
 
-  describe('mathオブジェクトに実装されているメソッドのテスト', () => {
-    describe('mulメソッドのテスト', () => {
-      it('mulメソッドの型はfunctionである', () => {
-        assert.equal(typeof math.mul, 'function');
-      });
-  
-      it('正しく掛け算ができる', () => {
-        assert.equal(math.mul(2, 1), 2);
-        assert.equal(math.mul(99, 1), 99);
-        assert.equal(math.mul(1000, 1), 1000);
-        assert.equal(math.mul(2, -1), -2);
-      });
-  
-      it('数値以外がセットされたらエラーを返す', () => {
-        const invalidValist = ['a', {}, [], null, undefined];
-        invalidValist.forEach(invalidValist => {
-          let error = null;
-          try {
-            math.mul('a', 2);
-          } catch (err) {
-            error = err;
-          }
-            assert.equal(error.message, '数値以外のものが引数に含められています');
-          });
-        });
-      });
+describe('mathオブジェクトに実装されているメソッドのテスト', () => {
+  describe('mulメソッドのテスト', () => {
+    it('mulメソッドの型はfunctionである', () => {
+      assert.equal(typeof math.mul, 'function');
     });
 
-      // 割り算のdiv関数のテストを作成
+    it('正しく掛け算ができる', () => {
+      assert.equal(math.mul(2, 1), 2);
+      assert.equal(math.mul(99, 1), 99);
+      assert.equal(math.mul(1000, 1), 1000);
+      assert.equal(math.mul(2, -1), -2);
+    });
+
+    it('数値以外がセットされたらエラーを返す', () => {
+      const invalidValist = ['a', {}, [], null, undefined];
+      invalidValist.forEach(invalidValist => {
+        let error = null;
+        try {
+          math.mul('a', 2);
+        } catch (err) {
+          error = err;
+        }
+        assert.equal(error.message, '数値以外のものが引数に含められています');
+      });
+    });
+  });
+});
+
+// 割り算のdiv関数のテストを作成
+
+describe('mathオブジェクトに実装されているメソッドのテスト', () => {
+  describe('divメソッドのテスト', () => {
+    it('mulメソッドの型はfunctionである', () => {
+      assert.equal(typeof math.div, 'function');
+    });
+
+    it('正しく割り算ができる', () => {
+      assert.equal(math.div(2, 1), 2);
+      assert.equal(math.div(99, 1), 99);
+      assert.equal(math.div(1000, 1), 1000);
+      assert.equal(math.div(2, -1), -2);
+    });
+
+    it('数値以外がセットされたらエラーを返す', () => {
+      const invalidValist = ['a', {}, [], null, undefined];
+      invalidValist.forEach(invalidValist => {
+        let error = null;
+        try {
+          math.mul('a', 2);
+        } catch (err) {
+          error = err;
+        }
+        assert.equal(error.message, '数値以外のものが引数に含められています');
+      });
+    });
+  });
+});
