@@ -20,7 +20,7 @@ describe('mathオブジェクトに実装されているメソッドのテスト
       invalidValueList.forEach(invalidValue => {
         let error = null;
         try {
-          math.add('a', 2);
+          math.add(undefined, 2);
         } catch (err) {
           error = err;
         }
