@@ -1,4 +1,3 @@
-//power-assert
 const assert = require('power-assert');
 const math = require('../../libs/math');
 
@@ -18,6 +17,7 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     it('数値以外がセットされたらエラーを返す', () => {
       const invalidValueList = ['a', {}, [], null, undefined];
       invalidValueList.forEach(invalidValue => {
+        console.log(invalidValue);
         let error = null;
         try {
           math.add(undefined, 2);
@@ -67,8 +67,9 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     });
 
     it('数値以外がセットされたらエラーを返す', () => {
-      const invalidValist = ['a', {}, [], null, undefined];
-      invalidValist.forEach(invalidValist => {
+      const invalidValueList = ['a', {}, [], null, undefined];
+      invalidValueList.forEach(invalidValue => {
+        console.log(invalidValue);
         let error = null;
         //try/catch文:例外処理が起きた際に対処用に用意されている処理
         try {
@@ -101,8 +102,9 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     });
 
     it('数値以外がセットされたらエラーを返す', () => {
-      const invalidValist = ['a', {}, [], null, undefined];
-      invalidValist.forEach(invalidValist => {
+      const invalidValueList = ['a', {}, [], null, undefined];
+      invalidValueList.forEach(invalidValue => {
+        console.log(invalidValue);
         let error = null;
         try {
           math.mul('a', 2);
@@ -131,8 +133,9 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     });
 
     it('数値以外がセットされたらエラーを返す', () => {
-      const invalidValist = ['a', {}, [], null, undefined];
-      invalidValist.forEach(invalidValist => {
+      const invalidValueList = ['a', {}, [], null, undefined];
+      invalidValueList.forEach(invalidValue => {
+        console.log(invalidValue);
         let error = null;
         try {
           math.mul('a', 2);
