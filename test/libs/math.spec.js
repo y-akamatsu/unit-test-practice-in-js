@@ -17,13 +17,13 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     it('数値以外がセットされたらエラーを返す', () => {
       const invalidValueList = ['a', {}, [], null, undefined];
       invalidValueList.forEach(invalidValue => {
-        console.log(invalidValue);
         let error = null;
         try {
           math.add(undefined, 2);
         } catch (err) {
           error = err;
         }
+        console.log(invalidValue);
         assert.equal(error.message, '数値以外のものが引数に含められています');
       });
     });
@@ -69,7 +69,6 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     it('数値以外がセットされたらエラーを返す', () => {
       const invalidValueList = ['a', {}, [], null, undefined];
       invalidValueList.forEach(invalidValue => {
-        console.log(invalidValue);
         let error = null;
         //try/catch文:例外処理が起きた際に対処用に用意されている処理
         try {
@@ -81,6 +80,7 @@ describe('mathオブジェクトに実装されているメソッドのテスト
           error = err;
         }
         assert.equal(error.message, '数値以外のものが引数に含められています');
+        console.log(invalidValue);
       });
     });
   });
@@ -104,13 +104,13 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     it('数値以外がセットされたらエラーを返す', () => {
       const invalidValueList = ['a', {}, [], null, undefined];
       invalidValueList.forEach(invalidValue => {
-        console.log(invalidValue);
         let error = null;
         try {
           math.mul('a', 2);
         } catch (err) {
           error = err;
         }
+        console.log(invalidValue);
         assert.equal(error.message, '数値以外のものが引数に含められています');
       });
     });
@@ -135,13 +135,13 @@ describe('mathオブジェクトに実装されているメソッドのテスト
     it('数値以外がセットされたらエラーを返す', () => {
       const invalidValueList = ['a', {}, [], null, undefined];
       invalidValueList.forEach(invalidValue => {
-        console.log(invalidValue);
         let error = null;
         try {
           math.mul('a', 2);
         } catch (err) {
           error = err;
         }
+        console.log(invalidValue);
         assert.equal(error.message, '数値以外のものが引数に含められています');
       });
     });
