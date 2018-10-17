@@ -1,3 +1,4 @@
+//power-assert
 const assert = require('power-assert');
 const math = require('../../libs/math');
 
@@ -46,13 +47,19 @@ describe('mathオブジェクトに実装されているメソッドのテスト
 
 // 引き算のsub関数のテストを作成
 
+//階層関係でまとめるための機能を持つ
+//descrice('コメント',コールバック関数)
 describe('mathオブジェクトに実装されているメソッドのテスト', () => {
   describe('subメソッドのテスト', () => {
+    //it(そのテストが期待する結果,コールバック関数)
     it('subメソッドの型はfunctionである', () => {
+      //テスト結果が期待値と同じであるのかの真偽判定を行u
+      //assert.equal(実際の値, '期待値')
       assert.equal(typeof math.sub, 'function');
     });
 
     it('正しく引き算ができる', () => {
+      //assert.equal(mathメソッドの呼び出し, '期待値')
       assert.equal(math.sub(2, 1), 1);
       assert.equal(math.sub(-99, -99), 0);
       assert.equal(math.sub(100000, -1), 100001);
@@ -63,9 +70,13 @@ describe('mathオブジェクトに実装されているメソッドのテスト
       const invalidValist = ['a', {}, [], null, undefined];
       invalidValist.forEach(invalidValist => {
         let error = null;
+        //try/catch文:例外処理が起きた際に対処用に用意されている処理
         try {
-          math.sub('a', 2);
+          //例外が発生しそうな処理を書く
+          math.sub('b', 2);
+          //cath()内にtryで起きた処理を格納
         } catch (err) {
+          //例外が起きたとに実行する処理
           error = err;
         }
         assert.equal(error.message, '数値以外のものが引数に含められています');
