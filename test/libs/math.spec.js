@@ -79,8 +79,8 @@ describe('mathオブジェクトに実装されているメソッドのテスト
           //例外が起きたとに実行する処理
           error = err;
         }
-        assert.equal(error.message, '数値以外のものが引数に含められています');
         console.log(invalidValue);
+        assert.equal(error.message, '数値以外のものが引数に含められています');
       });
     });
   });
